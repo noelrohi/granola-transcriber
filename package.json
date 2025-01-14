@@ -33,9 +33,9 @@
       "<all_urls>"
     ],
     "permissions": [
-      "tabs",
       "scripting",
-      "webRequest"
+      "webRequest",
+      "activeTab"
     ]
   }
 }

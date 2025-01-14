@@ -54,14 +54,28 @@ function IndexPopup() {
     }
   }
 
+  const clearTranscript = () => {
+    setTranscript(null)
+  }
+
   return (
     <div className="p-4" style={{ width: "300px" }}>
-      <button
-        onClick={handleClick}
-        type="button"
-        className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md mb-4 font-medium transition-colors">
-        {transcript ? "Refresh Transcript" : "Generate Transcript"}
-      </button>
+      <div className="flex gap-2 mb-4">
+        <button
+          onClick={handleClick}
+          type="button"
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+          {transcript ? "Refresh Transcript" : "Generate Transcript"}
+        </button>
+        {transcript && (
+          <button
+            onClick={clearTranscript}
+            type="button"
+            className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md font-medium transition-colors">
+            Clear
+          </button>
+        )}
+      </div>
 
       {transcript && (
         <div className="mt-4">
